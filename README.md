@@ -152,20 +152,19 @@ customer-churn-analytics/
 
 All core files are listed below with clickable links for instant inspection:
 
-**. 📂 data/** - Contains the database setup and data storage
-📄 customer_churn.csv - The raw IBM customer churn dataset (7,043 rows, 21 columns)
-📄 customer_churn_cleaned.csv - Cleaned, preprocessed dataset ready for modeling and dashboarding
-📄 db_setup.py - Python script that cleans data, handles missing values, and populates SQLite
-🗄️ churn.db - SQLite database containing the final customers table
-**.📂 notebooks/**- Jupyter exploratory notebooks
-📓 EDA.ipynb - Pre-run Jupyter Notebook containing all data cleaning notes, plots, and business insights
-**.📂 sql/** - Analytical database queries
-📄 churn_analysis.sql - Business intelligence queries answering contract, segment, cohort, and revenue churn questions
-**.📂 model/** - Machine Learning assets
-📄 train.py - Python script that trains Logistic Regression, Decision Tree, and Random Forest models, prints results, and serializes the best estimator
-💾 churn_prediction.pkl - Best trained Random Forest prediction pipeline pickle file
-**.💻 app.py** - The premium interactive Streamlit dashboard and risk predictor application    
-
+* 📁 **data/** - Contains the database setup and data storage
+  * 📄 **customer_churn.csv** - The raw IBM customer churn dataset (7,043 rows, 21 columns)
+  * 📄 **customer_churn_cleaned.csv** - Cleaned, preprocessed dataset ready for modeling and dashboarding
+  * 📄 **db_setup.py** - Python script that cleans data, handles missing values, and populates SQLite
+  * 🗄️ **churn.db** - SQLite database containing the final `customers` table
+* 📁 **notebooks/** - Jupyter exploratory notebooks
+  * 📓 **EDA.ipynb** - Pre-run Jupyter Notebook containing all data cleaning notes, plots, and business insights
+* 📁 **sql/** - Analytical database queries
+  * 📄 **churn_analysis.sql** - Business intelligence queries answering contract, segment, cohort, and revenue churn questions
+* 📁 **model/** - Machine Learning assets
+  * 📄 **train.py** - Python script that trains Logistic Regression, Decision Tree, and Random Forest models, prints results, and serializes the best estimator
+  * 💾 **churn_prediction.pkl** - Best trained Random Forest prediction pipeline pickle file
+* 💻 **app.py** - The interactive Streamlit dashboard and risk predictor application
 ---
 
 ## 🗄️ Database Schema & SQL Buainess Insights
