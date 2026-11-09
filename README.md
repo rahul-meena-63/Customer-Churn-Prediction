@@ -1,0 +1,326 @@
+ 📊 Customer Churn Analysis & Prediction Dashboard
+
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://cusomer-churn-predictor.streamlit.app/)
+![Python](https://img.shields.io/badge/Python-Data%20Analysis-blue)
+![SQL](https://img.shields.io/badge/SQL-SQLite3-lightgrey)
+![Machine Learning](https://img.shields.io/badge/Machine%20Learning-Scikit--learn-orange)
+![Dashboard](https://img.shields.io/badge/Dashboard-Streamlit-red)
+
+**🚀 Live Interactive Dashboard:** [Open Customer Churn Dashboard](https://cusomer-churn-predictor.streamlit.app/)
+
+---
+
+## 🎯 Project Overview
+
+- End-to-end data analytics and machine learning project focused on customer churn in a telecom subscription business.
+- Uses the IBM customer churn dataset containing **7,043 customer records and 21 columns**.
+- Converts raw customer data into business insights through:
+  - Data cleaning and preparation.
+  - Exploratory Data Analysis (EDA).
+  - SQL-based business analysis.
+  - Machine learning and churn prediction.
+  - Interactive Streamlit dashboard.
+- Focuses on understanding why customers leave and identifying customers who may leave in the future.
+
+## 🚀 Business Impact & Objective
+
+- **Business Problem:** Customer churn reduces recurring revenue and makes customer retention difficult for subscription-based businesses.
+- **Project Objective:** Understand customer churn, identify the factors associated with it, predict potential churn, and recommend actions to improve customer retention.
+- **Key Business Questions:**
+  - How many customers are leaving the company?
+  - Which customer characteristics and services are associated with churn?
+  - Can machine learning identify customers who may leave?
+  - What actions can the business take to reduce customer churn?
+
+---
+
+## ✨ Features & Key Insights
+
+- 📊 **Customer Churn Analysis:** Measures the overall churn rate and identifies patterns in customer behavior.
+- 🧹 **Data Cleaning & Preparation:** Handles missing values and prepares the customer dataset for analysis and modeling.
+- 🔎 **Exploratory Data Analysis (EDA):** Uses charts and visualizations to explore customer segments and churn patterns.
+- 🗄️ **SQL Business Analysis:** Analyzes churn by contract type, payment method, customer segment, cohort, and revenue.
+- 🤖 **Machine Learning:** Trains and compares Logistic Regression, Decision Tree, and Random Forest classifiers.
+- 📈 **Model Evaluation:** Compares model performance using accuracy, precision, recall, F1-score, and ROC-AUC.
+- 🖥️ **Interactive Dashboard:** Provides a Streamlit interface for customer churn analysis and risk prediction.
+- 💡 **Business Recommendations:** Converts analytical findings into customer retention strategies.
+
+### 📌 Key Business Findings
+
+| Business Metric | Result |
+|---|---:|
+| Total Customers | 7,043 |
+| Customers Who Churned | 1,869 |
+| Overall Churn Rate | **26.54%** |
+| Monthly Charges Associated with Churned Customers | **$139,130.85** |
+
+### 📃 Contract Type Analysis
+
+| Contract Type | Churn Rate |
+|---|---:|
+| Month-to-month | **42.71%** |
+| One year | 11.27% |
+| Two year | 2.83% |
+
+- Month-to-month customers have the highest churn rate.
+- Customers with longer-term contracts have lower churn rates.
+
+### 💳 Payment Method Analysis
+
+| Payment Method | Churn Rate |
+|---|---:|
+| Electronic check | **45.29%** |
+| Automatic credit card | 15.24% |
+| Automatic bank transfer | 16.71% |
+
+- Electronic check users show the highest churn rate among the listed payment methods.
+- Automatic payment users show lower churn rates in this analysis.
+
+### ⚠️ High-Risk Customer Segment
+
+- **Customer Segment:** Month-to-month contract + Fiber Optic internet + Electronic check payment.
+- **Churn Rate:** **60.37%**
+- **Customers in Segment:** 1,307
+- **Customers Who Churned:** 789
+
+---
+
+## 🛠️ Tech Stack & Tools
+
+| Area | Tools / Technologies | Purpose |
+|---|---|---|
+| Programming | Python | Data analysis and model development |
+| Data Cleaning & Analysis | Pandas, NumPy | Data preparation and analysis |
+| Database | SQL, SQLite3 | Store and query customer data |
+| Visualization | Plotly, Seaborn, Matplotlib | Explore and present data patterns |
+| Machine Learning | Scikit-learn | Train and evaluate churn prediction models |
+| Dashboard | Streamlit | Build the interactive web application |
+| Notebook | Jupyter Notebook | Perform and document exploratory analysis |
+
+### 🤖 Machine Learning Algorithms
+
+- Logistic Regression
+- Decision Tree
+- Random Forest
+
+### 📊 Model Performance Comparison
+
+- Models were evaluated using a **20% holdout test set**.
+- Numerical features were processed using Standard Scaling.
+- Categorical features were processed using One-Hot Encoding.
+
+| Model | Test Accuracy | Test Precision | Test Recall | Test F1-Score | Test ROC-AUC |
+|---|---:|---:|---:|---:|---:|
+| Logistic Regression | 80.70% | 66.04% | **56.15%** | **60.69%** | 84.22% |
+| Decision Tree | 79.42% | 63.12% | 54.01% | 58.21% | 82.67% |
+| Random Forest | **80.34%** | **67.64%** | 49.73% | 57.32% | **84.27%** |
+
+### 🏆 Model Selection
+
+- Random Forest achieved the highest ROC-AUC score: **84.27%**.
+- Random Forest was selected as the final prediction pipeline and saved as `model/churn_prediction.pkl`.
+- Logistic Regression achieved the highest recall and F1-score among the three models.
+- Random Forest achieved the highest precision and ROC-AUC.
+- Model selection is based on ROC-AUC in this project; the most suitable model may differ depending on the business objective.
+
+### 🔍 Logistic Regression – Odds-Ratio Analysis
+
+| Factor | Odds Ratio | Interpretation |
+|---|---:|---|
+| Fiber Optic Internet | 3.26 | Associated with 226% higher odds of churn |
+| Electronic Check Payment | 1.47 | Associated with 47% higher odds of churn |
+| Two-Year Contract | 0.27 | Associated with 73% lower odds of churn |
+| Tenure | 0.29 | Associated with 71% lower odds of churn per standard unit |
+
+- Odds ratios describe changes in **odds**, not direct percentage-point changes in churn probability.
+- The tenure interpretation is based on one standardized unit.
+
+---
+
+## 🗂️ Project Structure
+
+```text
+Customer-Churn-Prediction/
+│
+├── data/
+│   ├── customer_churn.csv
+│   ├── customer_churn_cleaned.csv
+│   ├── db_setup.py
+│   └── churn.db
+│
+├── notebooks/
+│   └── EDA.ipynb
+│
+├── sql/
+│   └── churn_analysis.sql
+│
+├── model/
+│   ├── train.py
+│   └── churn_prediction.pkl
+│
+└── app.py
+```
+
+### 📁 Folder & File Details
+
+- **`data/` – Dataset and database files**
+  - `customer_churn.csv` – Original IBM customer churn dataset with 7,043 rows and 21 columns.
+  - `customer_churn_cleaned.csv` – Cleaned and preprocessed dataset used for modeling and dashboarding.
+  - `db_setup.py` – Cleans data, handles missing values, and loads the data into SQLite.
+  - `churn.db` – SQLite database containing the final `customers` table.
+
+- **`notebooks/` – Exploratory analysis**
+  - `EDA.ipynb` – Pre-run Jupyter Notebook containing data cleaning notes, visualizations, and business insights.
+
+- **`sql/` – SQL analysis**
+  - `churn_analysis.sql` – Business intelligence queries covering contract, segment, cohort, and revenue churn questions.
+
+- **`model/` – Machine learning files**
+  - `train.py` – Trains Logistic Regression, Decision Tree, and Random Forest models, displays evaluation results, and saves the selected estimator.
+  - `churn_prediction.pkl` – Saved Random Forest prediction pipeline.
+
+- **`app.py` – Dashboard application**
+  - Main Streamlit application containing the interactive dashboard and customer risk prediction functionality.
+
+---
+
+## 🗄️ Database Schema
+
+- Customer data is stored in an SQLite database.
+- The main database table is named **`customers`**.
+- Key columns used in the analysis are listed below.
+
+| Column | Data Type | Description |
+|---|---|---|
+| `customer_id` | `VARCHAR(50)` (PK) | Unique identifier for each customer |
+| `gender` | `VARCHAR(10)` | Male / Female |
+| `senior_citizen` | `INTEGER` | 1 if senior citizen, 0 if not |
+| `tenure` | `INTEGER` | Number of months the customer has stayed with the company |
+| `contract` | `VARCHAR(20)` | Month-to-month, One year, or Two year |
+| `monthly_charges` | `REAL` | Current monthly bill amount |
+| `total_charges` | `REAL` | Total amount billed to date |
+| `churn` | `VARCHAR(5)` | Target field: Yes (customer left) or No (customer stayed) |
+| `payment_method` | `VARCHAR(30)` | Electronic check, Mailed check, Automatic card, or Automatic bank |
+| `internet_service` | `VARCHAR(20)` | Fiber optic, DSL, or None |
+| `tech_support` | `VARCHAR(20)` | Yes, No, or No internet service |
+
+---
+
+## 🖥️ Interactive Streamlit Dashboard
+
+- **Live Application:** [Customer Churn Prediction Dashboard](https://cusomer-churn-predictor.streamlit.app/)
+- Built using Streamlit.
+- Brings the project's analysis and customer risk prediction functionality together in one web application.
+- Allows users to explore the project's churn analysis and use its customer risk prediction application.
+
+---
+
+## ⚙️ How to Run the Project Locally
+
+### 1. Requirements
+
+- Install **Python 3.8 or later**.
+- Install the required Python libraries:
+
+```bash
+pip install pandas numpy scikit-learn matplotlib seaborn streamlit plotly nbformat nbconvert
+```
+
+### 2. Run Data Cleaning & Database Setup
+
+- Run the data preparation script:
+
+```bash
+python3 data/db_setup.py
+```
+
+- This script:
+  - Cleans the raw customer data.
+  - Handles missing values.
+  - Loads the prepared customer data into the SQLite database.
+
+### 3. Run Machine Learning Model Training
+
+- Run the training script:
+
+```bash
+python3 model/train.py
+```
+
+- This script:
+  - Trains Logistic Regression, Decision Tree, and Random Forest models.
+  - Evaluates model performance.
+  - Prints the evaluation metrics.
+  - Saves the selected prediction pipeline.
+
+### 4. Launch the Streamlit Dashboard
+
+- Start the application locally:
+
+```bash
+streamlit run app.py
+```
+
+- Or open the deployed dashboard:
+
+[https://cusomer-churn-predictor.streamlit.app/](https://cusomer-churn-predictor.streamlit.app/)
+
+---
+
+## 💡 Business Recommendations & Retention Strategies
+
+### 1. 📃 Encourage Customers to Choose Longer Contracts
+
+- **Finding:**
+  - Month-to-month customers represent **88% of all churned accounts**.
+- **Recommended Action:**
+  - Run targeted email and SMS campaigns for month-to-month customers.
+  - Offer a **$10/month contract credit** when customers upgrade to a 12-month commitment.
+- **Business Goal:**
+  - Encourage longer customer commitments and reduce churn among month-to-month subscribers.
+
+### 2. 💳 Encourage Automatic Payment Enrollment
+
+- **Finding:**
+  - Electronic check users have the highest churn rate at approximately **45.3%**.
+- **Recommended Action:**
+  - Offer a one-time **$15 account credit** to customers who enroll in Auto-Pay using a credit card or bank transfer.
+- **Business Goal:**
+  - Encourage automatic payments and reduce reliance on manual electronic checks.
+
+### 3. 👋 Improve the First Six Months of the Customer Journey
+
+- **Finding:**
+  - More than **52.9% of new customer churn happens within the first six months**.
+- **Recommended Action:**
+  - Introduce an early customer engagement program:
+    - **Month 1:** Welcome email and onboarding support.
+    - **Month 3:** Customer satisfaction check-in.
+    - **Month 5:** Feedback call and additional support.
+- **Business Goal:**
+  - Identify customer issues early and improve the experience of new subscribers.
+
+### 4. 🔐 Bundle Security & Technical Support Services
+
+- **Finding:**
+  - Customers without Online Security or Tech Support have a churn rate of approximately **49%**.
+  - Customers with both services have a churn rate of **9.0%**.
+- **Recommended Action:**
+  - Bundle security and technical support features into premium fiber-optic internet packages instead of selling them only as separate add-ons.
+- **Business Goal:**
+  - Increase customer value and support better customer retention.
+
+---
+
+## ✅ Project Conclusion
+
+- Analyzed customer churn using Python, SQL, and data visualization tools.
+- Identified an overall churn rate of **26.54%** across 7,043 customers.
+- Identified **$139,130.85 in monthly charges associated with churned customers**.
+- Found important churn patterns related to contract type, payment method, tenure, and services.
+- Built and compared three machine learning classification models.
+- Selected Random Forest based on its highest ROC-AUC score of **84.27%**.
+- Developed an interactive Streamlit dashboard for churn analysis and customer risk prediction.
+- Proposed four data-driven retention strategies to help reduce customer loss and protect recurring revenue.
+
+**⭐ Project Outcome:** Transforms raw customer data into clear business insights, churn predictions, and practical customer retention recommendations.
