@@ -101,13 +101,12 @@
 
 | Layer / Stage | Technology | Official Link | Architectural Role |
 | :--- | :--- | :--- | :--- |
-| **Numerical Processing** | NumPy | [numpy.org](https://numpy.org/) | Array computing, matrix operations, and vectorized conditions |
-| **Data Manipulation & ETL** | Pandas | [pandas.pydata.org](https://pandas.pydata.org/) | Ingestion, data cleaning, transformations, and aggregation |
-| **Static Data Visualization** | Matplotlib | [matplotlib.org](https://matplotlib.org/) | Core plotting framework for distributions and raw charts |
-| **Statistical Visualization** | Seaborn | [seaborn.pydata.org](https://seaborn.pydata.org/) | Correlation heatmaps, churn pairplots, and cohort charts |
-| **Interactive Visualization** | Plotly | [plotly.com/python](https://plotly.com/python/) | Dynamic histograms, churn distribution donuts, and bar charts |
-| **Machine Learning** | Scikit-Learn | [scikit-learn.org](https://scikit-learn.org/) | Feature preprocessing, pipeline building, model training, and evaluation |
-| **Web Application & UI** | Streamlit | [streamlit.io](https://streamlit.io/) | Front-end web dashboard, metric KPI display, and live inference interface |
+| **Data Analysis & Cleaning** | NumPy, Pandas | [numpy.org](https://numpy.org/), [pandas.pydata.org](https://pandas.pydata.org/)| Data analysis  |
+| **Data Visualization** | Matplotlib, Seaborn | [matplotlib.org](https://matplotlib.org/), [seaborn.pydata.org](https://seaborn.pydata.org/)  | visualize data and anal |
+| **Machine Learning** | Seaborn | [seaborn.pydata.org](https://seaborn.pydata.org/) |  |
+| **Interactive Visualization** | Plotly | [plotly.com/python](https://plotly.com/python/) |  |
+| **Machine Learning** | Scikit-Learn (Logistic Regression, Decision Tree, Random Forest) | [scikit-learn.org](https://scikit-learn.org/) |  |
+| **Dashboard & UI** | Streamlit | [streamlit.io](https://streamlit.io/) |  |
 
 
 ## 🗂️ Project Structure
