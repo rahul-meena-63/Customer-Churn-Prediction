@@ -1,4 +1,4 @@
- 📊 Customer Churn Analysis & Prediction Dashboard
+ ## 📊 Customer Churn Analysis & Prediction Dashboard
 
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://cusomer-churn-predictor.streamlit.app/)
 ![Python](https://img.shields.io/badge/Python-Data%20Analysis-blue)
@@ -22,15 +22,15 @@
   - Interactive Streamlit dashboard.
 - Focuses on understanding why customers leave and identifying customers who may leave in the future.
 
-## 🚀 Business Impact & Objective
+## 🚀 Business Problem & Objective
 
 - **Business Problem:** Customer churn reduces recurring revenue and makes customer retention difficult for subscription-based businesses.
 - **Project Objective:** Understand customer churn, identify the factors associated with it, predict potential churn, and recommend actions to improve customer retention.
 - **Key Business Questions:**
-  - How many customers are leaving the company?
-  - Which customer characteristics and services are associated with churn?
-  - Can machine learning identify customers who may leave?
-  - What actions can the business take to reduce customer churn?
+  1. How many customers are leaving the company?
+  2. Which customer characteristics and services are associated with churn?
+  3. Can machine learning identify customers who may leave?
+  4. What actions can the business take to reduce customer churn?
 
 ---
 
@@ -97,6 +97,88 @@
 | Dashboard | Streamlit | Build the interactive web application |
 | Notebook | Jupyter Notebook | Perform and document exploratory analysis |
 
+
+## 🗂️ Project Structure
+
+```text
+customer-churn-analytics/
+├── .gitignore
+├── README.md
+├── requirements.txt
+│
+├── data/
+│   ├── raw/
+│   │   └── WA_Fn-UseC_-Telco-Customer-Churn.csv
+│   └── processed/
+│       └── customer_churn_cleaned.csv
+│
+├── database/
+│   ├── churn.db                     # SQLite database file
+│   ├── schema.sql                   # Table creation script
+│   └── queries.sql                  # Analytical SQL queries (SQLite & T-SQL)
+│
+├── notebooks/
+│   ├── 01_eda_data_cleaning.ipynb   # Exploratory Data Analysis
+│   └── 02_model_training.ipynb      # ML feature engineering & training
+│
+├── models/
+│   └── churn_prediction.pkl         # Serialized trained model
+│
+├── powerbi/
+│   ├── customer_churn_dashboard.pbix
+│   └── dax_measures.txt             # Documented DAX formulas
+│
+├── src/
+│   ├── __init__.py
+│   ├── db_connection.py             # SQLite / MS SQL Server connection logic
+│   └── predict.py                   # Model inference helpers
+│
+└── app.py                           # Streamlit dashboard application
+
+```
+
+### 📁 Repository Structure
+
+All core files are listed below with clickable links for instant inspection:
+
+📂 data/ - Contains the database setup and data storage
+📄 customer_churn.csv - The raw IBM customer churn dataset (7,043 rows, 21 columns)
+📄 customer_churn_cleaned.csv - Cleaned, preprocessed dataset ready for modeling and dashboarding
+📄 db_setup.py - Python script that cleans data, handles missing values, and populates SQLite
+🗄️ churn.db - SQLite database containing the final customers table
+📂 notebooks/ - Jupyter exploratory notebooks
+📓 EDA.ipynb - Pre-run Jupyter Notebook containing all data cleaning notes, plots, and business insights
+📂 sql/ - Analytical database queries
+📄 churn_analysis.sql - Business intelligence queries answering contract, segment, cohort, and revenue churn questions
+📂 model/ - Machine Learning assets
+📄 train.py - Python script that trains Logistic Regression, Decision Tree, and Random Forest models, prints results, and serializes the best estimator
+💾 churn_prediction.pkl - Best trained Random Forest prediction pipeline pickle file
+💻 app.py - The premium interactive Streamlit dashboard and risk predictor application    
+
+---
+
+## 🗄️ Database Schema & SQL Buainess Insights
+
+- Customer data is stored in an SQLite database.
+- The main database table is named **`customers`**.
+- Key columns used in the analysis are listed below.
+
+| Column | Data Type | Description |
+|---|---|---|
+| `customer_id` | `VARCHAR(50)` (PK) | Unique identifier for each customer |
+| `gender` | `VARCHAR(10)` | Male / Female |
+| `senior_citizen` | `INTEGER` | 1 if senior citizen, 0 if not |
+| `tenure` | `INTEGER` | Number of months the customer has stayed with the company |
+| `contract` | `VARCHAR(20)` | Month-to-month, One year, or Two year |
+| `monthly_charges` | `REAL` | Current monthly bill amount |
+| `total_charges` | `REAL` | Total amount billed to date |
+| `churn` | `VARCHAR(5)` | Target field: Yes (customer left) or No (customer stayed) |
+| `payment_method` | `VARCHAR(30)` | Electronic check, Mailed check, Automatic card, or Automatic bank |
+| `internet_service` | `VARCHAR(20)` | Fiber optic, DSL, or None |
+| `tech_support` | `VARCHAR(20)` | Yes, No, or No internet service |
+
+---
+
 ### 🤖 Machine Learning Algorithms
 
 - Logistic Regression
@@ -134,77 +216,6 @@
 
 - Odds ratios describe changes in **odds**, not direct percentage-point changes in churn probability.
 - The tenure interpretation is based on one standardized unit.
-
----
-
-## 🗂️ Project Structure
-
-```text
-Customer-Churn-Prediction/
-│
-├── data/
-│   ├── customer_churn.csv
-│   ├── customer_churn_cleaned.csv
-│   ├── db_setup.py
-│   └── churn.db
-│
-├── notebooks/
-│   └── EDA.ipynb
-│
-├── sql/
-│   └── churn_analysis.sql
-│
-├── model/
-│   ├── train.py
-│   └── churn_prediction.pkl
-│
-└── app.py
-```
-
-### 📁 Folder & File Details
-
-- **`data/` – Dataset and database files**
-  - `customer_churn.csv` – Original IBM customer churn dataset with 7,043 rows and 21 columns.
-  - `customer_churn_cleaned.csv` – Cleaned and preprocessed dataset used for modeling and dashboarding.
-  - `db_setup.py` – Cleans data, handles missing values, and loads the data into SQLite.
-  - `churn.db` – SQLite database containing the final `customers` table.
-
-- **`notebooks/` – Exploratory analysis**
-  - `EDA.ipynb` – Pre-run Jupyter Notebook containing data cleaning notes, visualizations, and business insights.
-
-- **`sql/` – SQL analysis**
-  - `churn_analysis.sql` – Business intelligence queries covering contract, segment, cohort, and revenue churn questions.
-
-- **`model/` – Machine learning files**
-  - `train.py` – Trains Logistic Regression, Decision Tree, and Random Forest models, displays evaluation results, and saves the selected estimator.
-  - `churn_prediction.pkl` – Saved Random Forest prediction pipeline.
-
-- **`app.py` – Dashboard application**
-  - Main Streamlit application containing the interactive dashboard and customer risk prediction functionality.
-
----
-
-## 🗄️ Database Schema
-
-- Customer data is stored in an SQLite database.
-- The main database table is named **`customers`**.
-- Key columns used in the analysis are listed below.
-
-| Column | Data Type | Description |
-|---|---|---|
-| `customer_id` | `VARCHAR(50)` (PK) | Unique identifier for each customer |
-| `gender` | `VARCHAR(10)` | Male / Female |
-| `senior_citizen` | `INTEGER` | 1 if senior citizen, 0 if not |
-| `tenure` | `INTEGER` | Number of months the customer has stayed with the company |
-| `contract` | `VARCHAR(20)` | Month-to-month, One year, or Two year |
-| `monthly_charges` | `REAL` | Current monthly bill amount |
-| `total_charges` | `REAL` | Total amount billed to date |
-| `churn` | `VARCHAR(5)` | Target field: Yes (customer left) or No (customer stayed) |
-| `payment_method` | `VARCHAR(30)` | Electronic check, Mailed check, Automatic card, or Automatic bank |
-| `internet_service` | `VARCHAR(20)` | Fiber optic, DSL, or None |
-| `tech_support` | `VARCHAR(20)` | Yes, No, or No internet service |
-
----
 
 ## 🖥️ Interactive Streamlit Dashboard
 
@@ -271,9 +282,9 @@ streamlit run app.py
 
 ### 1. 📃 Encourage Customers to Choose Longer Contracts
 
-- **Finding:**
+- **Insight:**
   - Month-to-month customers represent **88% of all churned accounts**.
-- **Recommended Action:**
+- **Action:**
   - Run targeted email and SMS campaigns for month-to-month customers.
   - Offer a **$10/month contract credit** when customers upgrade to a 12-month commitment.
 - **Business Goal:**
@@ -281,18 +292,18 @@ streamlit run app.py
 
 ### 2. 💳 Encourage Automatic Payment Enrollment
 
-- **Finding:**
+- **Insight:**
   - Electronic check users have the highest churn rate at approximately **45.3%**.
-- **Recommended Action:**
+- **Action:**
   - Offer a one-time **$15 account credit** to customers who enroll in Auto-Pay using a credit card or bank transfer.
 - **Business Goal:**
   - Encourage automatic payments and reduce reliance on manual electronic checks.
 
 ### 3. 👋 Improve the First Six Months of the Customer Journey
 
-- **Finding:**
+- **Insight:**
   - More than **52.9% of new customer churn happens within the first six months**.
-- **Recommended Action:**
+- **Action:**
   - Introduce an early customer engagement program:
     - **Month 1:** Welcome email and onboarding support.
     - **Month 3:** Customer satisfaction check-in.
@@ -302,10 +313,10 @@ streamlit run app.py
 
 ### 4. 🔐 Bundle Security & Technical Support Services
 
-- **Finding:**
+- **Insight:**
   - Customers without Online Security or Tech Support have a churn rate of approximately **49%**.
   - Customers with both services have a churn rate of **9.0%**.
-- **Recommended Action:**
+- **Action:**
   - Bundle security and technical support features into premium fiber-optic internet packages instead of selling them only as separate add-ons.
 - **Business Goal:**
   - Increase customer value and support better customer retention.
