@@ -85,28 +85,16 @@
 
 ---
 
-## 🛠️ Tech Stack & Tools
-
-| Area | Tools / Technologies | Purpose |
-|---|---|---|
-| Programming | Python | Data analysis and model development |
-| Data Cleaning & Analysis | Pandas, NumPy | Data preparation and analysis |
-| Database | SQL, SQLite3 | Store and query customer data |
-| Visualization | Plotly, Seaborn, Matplotlib | Explore and present data patterns |
-| Machine Learning | Scikit-learn (Logistic Regression, Decision Tree, Random Forest) | Train and evaluate churn prediction models |
-| Dashboard | Streamlit | Build the interactive web application |
-| Notebook | Jupyter Notebook | Perform and document exploratory analysis |
-
 ## 🛠 Tech Stack & Architecture
 
 | Layer / Stage | Technology | Official Link | Architectural Role |
 | :--- | :--- | :--- | :--- |
-| **Data Analysis & Cleaning** | NumPy, Pandas | [numpy.org](https://numpy.org/), [pandas.pydata.org](https://pandas.pydata.org/)| Data analysis  |
-| **Data Visualization** | Matplotlib, Seaborn | [matplotlib.org](https://matplotlib.org/), [seaborn.pydata.org](https://seaborn.pydata.org/)  | visualize data and anal |
+| **Data Analysis & Cleaning** | NumPy, Pandas | [numpy.org](https://numpy.org/), [pandas.pydata.org](https://pandas.pydata.org/)| Data analysis and model development  |
+| **Data Visualization** | Matplotlib, Seaborn | [matplotlib.org](https://matplotlib.org/), [seaborn.pydata.org](https://seaborn.pydata.org/)  | Train and evaluate churn prediction models |
 | **Machine Learning** | Seaborn | [seaborn.pydata.org](https://seaborn.pydata.org/) |  |
 | **Interactive Visualization** | Plotly | [plotly.com/python](https://plotly.com/python/) |  |
 | **Machine Learning** | Scikit-Learn (Logistic Regression, Decision Tree, Random Forest) | [scikit-learn.org](https://scikit-learn.org/) |  |
-| **Dashboard & UI** | Streamlit | [streamlit.io](https://streamlit.io/) |  |
+| **Dashboard & UI** | Streamlit | [streamlit.io](https://streamlit.io/) | Build the interactive web application |
 
 
 ## 🗂️ Project Structure
