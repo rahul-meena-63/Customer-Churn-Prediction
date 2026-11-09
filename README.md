@@ -90,9 +90,7 @@
 | Layer / Stage | Technology | Official Link | Architectural Role |
 | :--- | :--- | :--- | :--- |
 | **Data Analysis & Cleaning** | NumPy, Pandas | [numpy.org](https://numpy.org/), [pandas.pydata.org](https://pandas.pydata.org/)| Data analysis and model development  |
-| **Data Visualization** | Matplotlib, Seaborn | [matplotlib.org](https://matplotlib.org/), [seaborn.pydata.org](https://seaborn.pydata.org/)  | Train and evaluate churn prediction models |
-| **Machine Learning** | Seaborn | [seaborn.pydata.org](https://seaborn.pydata.org/) |  |
-| **Interactive Visualization** | Plotly | [plotly.com/python](https://plotly.com/python/) |  |
+| **Data Visualization** | Matplotlib, Seaborn, Plotly | [matplotlib.org](https://matplotlib.org/), [seaborn.pydata.org](https://seaborn.pydata.org/), [plotly.com/python](https://plotly.com/python/)  | Train and evaluate churn prediction models |  
 | **Machine Learning** | Scikit-Learn (Logistic Regression, Decision Tree, Random Forest) | [scikit-learn.org](https://scikit-learn.org/) |  |
 | **Dashboard & UI** | Streamlit | [streamlit.io](https://streamlit.io/) | Build the interactive web application |
 
