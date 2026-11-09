@@ -93,9 +93,21 @@
 | Data Cleaning & Analysis | Pandas, NumPy | Data preparation and analysis |
 | Database | SQL, SQLite3 | Store and query customer data |
 | Visualization | Plotly, Seaborn, Matplotlib | Explore and present data patterns |
-| Machine Learning | Scikit-learn | Train and evaluate churn prediction models |
+| Machine Learning | Scikit-learn (Logistic Regression, Decision Tree, Random Forest) | Train and evaluate churn prediction models |
 | Dashboard | Streamlit | Build the interactive web application |
 | Notebook | Jupyter Notebook | Perform and document exploratory analysis |
+
+## 🛠 Tech Stack & Architecture
+
+| Layer / Stage | Technology | Official Link | Architectural Role |
+| :--- | :--- | :--- | :--- |
+| **Numerical Processing** | NumPy | [numpy.org](https://numpy.org/) | Array computing, matrix operations, and vectorized conditions |
+| **Data Manipulation & ETL** | Pandas | [pandas.pydata.org](https://pandas.pydata.org/) | Ingestion, data cleaning, transformations, and aggregation |
+| **Static Data Visualization** | Matplotlib | [matplotlib.org](https://matplotlib.org/) | Core plotting framework for distributions and raw charts |
+| **Statistical Visualization** | Seaborn | [seaborn.pydata.org](https://seaborn.pydata.org/) | Correlation heatmaps, churn pairplots, and cohort charts |
+| **Interactive Visualization** | Plotly | [plotly.com/python](https://plotly.com/python/) | Dynamic histograms, churn distribution donuts, and bar charts |
+| **Machine Learning** | Scikit-Learn | [scikit-learn.org](https://scikit-learn.org/) | Feature preprocessing, pipeline building, model training, and evaluation |
+| **Web Application & UI** | Streamlit | [streamlit.io](https://streamlit.io/) | Front-end web dashboard, metric KPI display, and live inference interface |
 
 
 ## 🗂️ Project Structure
@@ -141,19 +153,19 @@ customer-churn-analytics/
 
 All core files are listed below with clickable links for instant inspection:
 
-📂 data/ - Contains the database setup and data storage
+**. 📂 data/** - Contains the database setup and data storage
 📄 customer_churn.csv - The raw IBM customer churn dataset (7,043 rows, 21 columns)
 📄 customer_churn_cleaned.csv - Cleaned, preprocessed dataset ready for modeling and dashboarding
 📄 db_setup.py - Python script that cleans data, handles missing values, and populates SQLite
 🗄️ churn.db - SQLite database containing the final customers table
-📂 notebooks/ - Jupyter exploratory notebooks
+**.📂 notebooks/**- Jupyter exploratory notebooks
 📓 EDA.ipynb - Pre-run Jupyter Notebook containing all data cleaning notes, plots, and business insights
-📂 sql/ - Analytical database queries
+**.📂 sql/** - Analytical database queries
 📄 churn_analysis.sql - Business intelligence queries answering contract, segment, cohort, and revenue churn questions
-📂 model/ - Machine Learning assets
+**.📂 model/** - Machine Learning assets
 📄 train.py - Python script that trains Logistic Regression, Decision Tree, and Random Forest models, prints results, and serializes the best estimator
 💾 churn_prediction.pkl - Best trained Random Forest prediction pipeline pickle file
-💻 app.py - The premium interactive Streamlit dashboard and risk predictor application    
+**.💻 app.py** - The premium interactive Streamlit dashboard and risk predictor application    
 
 ---
 
