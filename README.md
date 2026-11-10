@@ -91,7 +91,7 @@
 | :--- | :--- | :--- | :--- |
 | **Data Analysis & Cleaning** | NumPy, Pandas | [numpy.org](https://numpy.org/), [pandas.pydata.org](https://pandas.pydata.org/)| Data analysis and model development  |
 | **Data Visualization** | Matplotlib, Seaborn, Plotly | [matplotlib.org](https://matplotlib.org/), [seaborn.pydata.org](https://seaborn.pydata.org/), [plotly.com/python](https://plotly.com/python/)  | Train and evaluate churn prediction models |  
-| **Machine Learning** | Scikit-Learn (Logistic Regression, Decision Tree, Random Forest) | [scikit-learn.org](https://scikit-learn.org/) | Apply ml model and choose best  |
+| **Machine Learning** | Scikit-Learn (Logistic Regression, Decision Tree, Random Forest) | [scikit-learn.org](https://scikit-learn.org/) | Applied machine learning algorythm and compare with other algorithyms   |
 | **Dashboard & UI** | Streamlit | [streamlit.io](https://streamlit.io/) | Build the interactive web application |
 
 
